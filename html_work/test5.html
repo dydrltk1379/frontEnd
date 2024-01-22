@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <!-- 하이퍼링크 - 페이지 이동 -->
+    <a href="https://www.w3schools.com">w3school.com</a><br>
+    <a href="http://localhost:5500/sub/sub1.html" target="_self">sub1.html</a>
+    <a href="sub/sub2.html" target="_blank">sub2.html</a>
+
+    
+    <ul>
+        <li><a href="./sub/sub2.html#first">첫번째 주제</a></li>
+        <li><a href="./sub/sub2.html#second">2번째 주제</a></li>
+        <li><a href="./sub/sub2.html#third">3번째 주제</a></li>
+    </ul>
+
+    <!-- 하이퍼링크 - 프로그램 실행, 다운로드 등 (html5에는 별도로 하이퍼링크 대체할수 있는 속성이 있음) -->
+    <a href="./resources/html_work.zip">다운로드</a><br>
+    <a href="./resources/sample.mp4">동영상 실행</a><br>
+    <!-- pseudo protocol(가상 프로토콜) - outlook으로 메일 보낸다. -->
+    <a href="mailto:dydrltk1379@gachon.ac.kr">메일 보내기</a>
+    
+    <!-- 이미지 맵 -->
+    <img src="./images/Penguins.jpg" usemap="#panguins"/>
+    <map name="panguins">
+        <!-- coords="x, y, r" -->
+        <area shape="circle" coords="265, 125, 50" href="https://www.naver.com"/>
+        <area shape="rect" coords="490, 130, 590, 180" href="./test3.html"/>
+    </map>
+</body>
+</html>

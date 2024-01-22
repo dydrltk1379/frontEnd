@@ -1,0 +1,122 @@
+CSS(cascading style sheet)
+- 캐스케이딩(cascading) : 폭포처럼 떨어져 내리는
+    -> DOM(Document Object Model) Tree구조(상속 : 상위 요소-> 하위요소, 하위태그에서 상위태그에 속한 디자인 속성 변경 가능)
+==============================================
+- HTML로 만들어진 콘텐츠에 레이아웃과 디자인 요소를 정의하는 기술
+- 재활용(분리된 형태) + 테마, 템플릿의 형태로 확장 가능
+- 동적인 콘텐츠 표현이나 디자인 적용 가능
+
+1. 개요
+    (1) 버전
+        css 1.x -> 2.x 3.x -> 4.x
+    (2) 목적
+        - 1) 웹 문서(HTML 등)의 디자인 요소 관리(유지보수 등)
+        - 2) 웹 표준화(크로스 브라우징) - 반응형 디자인
+
+2. 사용 방법(3가지)
+    -   <style>
+            선택자(selector) {속성:값; 속성:값....}
+        </style>
+    (1) External style sheet: 별도의(분리) css파일을 호출
+            <link rel="stylesheet" type="text/css" href="위치">
+            css가 다른 css에 넣으려면 : @import url(external_box.css);
+    (2) inline style sheet: 태그안에서 직접 사용(style을 사용하는 방식)
+    (3) internal style sheet: 하나의 웹 페이지(html)에 단 한번만 정의해 같은 페이지내에서만 동일한 디자인을 재사용
+
+    - 선택자 우선순위(점수 순)
+        - 브라우저 디자인 정의 < 외부 < 내부 < 인라인
+        - !import(색 뒤에 씀) >>> 인라인(1000점) > id(100점) > 
+                class(10점) > tag(1점) > *, not(0점, 마지막인 경우를 출력) > 상속(점수 없음)
+        - .list li.item{...} : 10 + 1 + 10
+        - #submit span{...} : 100 + 1
+        - .not(.box){...} : 10
+
+3. 문법
+    - Selector(속성 : 값; 속성 : 값;...)
+    (1) 기본 Selector
+        -1. *(전체 선택자, Universal Selector, 특정 영역을 사용할때) 
+        -2. Type Selector(= tag Selector)
+        -3. Class Selector( .class_name1, class="class_name1")
+                - html의 class속성을 이용, 디자인
+        -4. ID Selector( #id_name, id="id_name")
+                - html의 id속성을 이용, 고유 식별, 자바스크립트
+
+    (2) 복합 selector
+        -selector02.html
+        선택자 : abc, xyz
+        -1. 일치 선택자 - Basic Combination Selector
+                -> abcxyz 
+        -2. 자식 선택자 - Child Combination Selector
+                -> abc>xyz : xyz가 자식
+        -3. 하위(후손) 선택자(Decendant COmbination Selelctor)
+                -> abc xyz : 중간 공백
+        -4. 인접 형제 선택자(Adjacent Sibling Combinator)
+                -> abc+xyz : abc의 다음 형제 요소 xyz 하나를 선택
+        -5. 일반 형제 선택자(General Sibiling Combinator)
+                -> abc~xyz : abc의 다음 형제 요소 xyz 모두를 선택
+
+    (3) 가상 selector (가상 클래스 psudo class + 가상 Element) : 동적으로 값을 변할 수 있음
+        -1. :hover : 마우스가 올라가 있을 경우
+        -2. :active : 마우스를 클릭하고 있는 동안
+        -3. :focus : 해당 요소가 focus되면 선택
+                - html 대화형 컨텐츠에만 적용 - input, a, lable, select, ...
+                - focus를 가질 수 없는 요소에 focus를 가질 수 있게 하기 위해서는
+                        tabindex라는 속성을 사용
+        -----------
+        -4. :first child : 선택자가 형제 요소 중에 첫번째 자식요소 선택
+        -5. :last child : 선택자가 형제 요소 중에 마지막 자식요소 선택
+        -6. :nth child : 선택자가 형제 요소 중에 n번째 자식요소 선택
+        -7. :negative selector not(부정 선택자, not selector)
+                - abc:not(xyz) => 선택자 xyz가 아닌 abc 요소 선택
+
+    (4) 가상 요소 selector(pseudo element selector)
+        - 인라인 요소 
+        -1. ::before : 선택자 요소의 내부 앞에 내용을 삽입
+                    - ::before{content:"내용"};
+        -2. ::after : 선택자 요소의 내부 뒤에 내용을 삽입
+                    - ::after{content:"내용"};
+        - selector05
+
+    (5) attribute selector
+        [속성]{
+    
+        }
+        [속성=값]{
+
+        }
+
+    글자와 상자
+        1) inline element : 글자를 만들기 위한 요소
+                - 줄바꿈 속성이 적용 불가(width, height, margin, padding, bottom)
+                - 좌우 여백은 가능
+                - block 요소 포함 불가능
+                - <img>, <p>, <span>, ...
+        2) block element : 상자(레이아웃)를 만들기 위한 요소
+                - 줄바꿈 속성이 가능(width, height, margin, padding, bottom)
+                - inline 요소 포함 가능
+                - <div>, <p>, <h>, ul>, ...
+
+    스타일 상속
+        1) 주로 글자/문자 관련 속성들에 대해서 상속이 가능하다.
+        2) font-style, font-weight, font-size, line-height, font-family, color, text-align,...
+        3) 강제 상속 : inherite
+
+    속성
+        - 박스 모델, 글꼴/문자, 배경, 배치, 플렉스(정렬), 전환(애니메이션 효과), 변환, 띄움, 애니메이션, 그리드, 다단, 필터
+
+        (1) 박스 모델  
+                - 너비 : width, height
+                        1. default : auto
+                        2. 단위 : px. em, rem, vh, vw
+                - 최대 너비(max-width, max-height)
+                        1. 기본값 : none
+                        2. auto : x
+                        3. 단위 : px. em, rem, vh, vw 
+                - 최소 너비(min-width, min-height)
+                        1. 기본값 : 0
+                        2. auto : x
+                        3. 단위 : px. em, rem, vh, vw 
+                - 단위
+                        1. px : 해상도 1픽셀 
+                        2. %
+                        3. em : 요소의 글꼴 크기

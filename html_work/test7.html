@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <!-- 문자열 입력 태그 -->
+    <input type="text" size="30" maxlength="15" disabled/><br><br>
+    <input type="text" size="30" maxlength="15" readonly/><br>
+    <input type="text" value="여기에 아이디를 입력하세요"/><!-- 고전 방식 --><br><br>
+    <input type="text" placeholder="여기에 아이디를 입력하세요"/><!-- 현 방식 --><br><br>
+    <input type="password"/><br>
+    <textarea rows="3" cols="40"></textarea><br><!--textare(빈태그이지만)는 끝태그가 있어야 함.-->
+    
+    <!-- 선택에 따른 입력 - 이름이 같을경우 하나만 선택 가능 -->
+    <input type="radio" name="select">yes<input type="radio" name="select">no<br>
+    
+    <input type="checkbox" name="hobby" id="movie"/><label for="movie">영화</label>
+    <input type="checkbox" name="hobby">운동
+    <input type="checkbox" name="hobby">음악
+    <br>
+    <select>
+        <option>서울</option>
+        <option>경기</option>
+        <option selected>인천</option>
+    </select>
+    <br>
+    <select size="4" multiple="multiple"> 
+        <option>서울</option>
+        <option>경기</option>
+        <option selected>인천</option>
+    </select><br><br>
+    
+    <!-- 버튼 -->
+    <form action="">
+        <input type="button" value="기본 버튼" /><br>
+        <input type="image"  src="./images/duke_point.gif" /><br>
+        <input type="submit" value="서버로 전송" />  <!-- 서버(백엔드)로 보내주는 타입 -->
+        <input type="reset" value="취소"/><br>
+        <button>버튼</button>
+    </form><br>
+
+    <hr />
+    <!-- 기타 -->
+    <input type="file"/>
+    <input type="hidden" name="tel" value="1111-1111"/>
+</body>
+</html>

@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<style>
+    /*  딸기 선택
+        .fruits span:first-child{
+            color: red;
+        }
+    */
+    /*  사과 선택
+        .fruits h3:last-child{
+            color:blue;
+        }
+    */
+    /*  전체에서 2번째 선택
+        .fruits *:nth-child(2){
+            color:red;
+        }    
+    */
+    /*  짝수번 선택
+        .fruits *:nth-child(2n){
+            color:red;
+        }
+    */
+    /*  홀수번 선택
+        .fruits *n:th-child(2n+1){
+            color:red;
+        }
+    */
+
+    /*  fruits 하위 요소들 중 span을 제외한 나머지 요소 선택
+    */
+        .fruits *:not(span){
+            color:red;
+        }
+</style>
+<body>
+    <div class="fruits">
+        <span>딸기</span>
+        <span>수박</span>
+        <div>오렌지</div>
+        <p>망고</p>
+        <h3>사과</h3>
+    </div>
+</body>
+</html>

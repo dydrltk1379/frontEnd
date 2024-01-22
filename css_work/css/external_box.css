@@ -1,0 +1,7 @@
+/* 다른 CSS를 추가 */
+@import url(external_box.css);
+div{
+    width: 300px;
+    height: 200px;
+    background-color: aqua;
+}
