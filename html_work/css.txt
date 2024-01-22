@@ -207,4 +207,37 @@ CSS(cascading style sheet)
                 - text-align: left center right
                 - text_decoration(선 여부) : none, underline, line-through
                 - text-indent(들여쓰기: 양수값, 내어쓰기: 음수값)
-                - 
+
+        (4) 배경 지정
+                - background-color : default = transparent(투명한)
+                - background-image : default = none, url("이미지 경로")
+                - background-repeat
+                - background-position
+                        방향 : tpo, bottom, left, right, center
+                        단위 : px, em, rem 등으로 지정
+                - background-size
+                        auto : 실제 크기
+                        단위
+                        cover(비율 유지하고 요소의 더 넓은 너비에 맞춤)
+                        contain(비율을 유지하고 요소의 더 짧은 너비에 맞춤)
+                - background-attachment
+                        1) scroll
+                        2) fixed
+
+        (5) 배치(position)
+                요소를 배치할 때는 어떤 기준을 먼저 설정하고 나서(position)
+                 위치(top, bottom, left, right, z-index)를 정해야 한다.
+                        - position : 요소의 위치 지정 기준
+                                default : static(기준 없음)
+                                relative : 요소 자신 위치 기준
+                                absolute : *위치상* 부모 요소 기준
+                                             ㄴ 부모가 기준이 없으면 자식에 영향을 안줌
+                                                따라서 relative 설정된 부모 요소를 기준으로 위치가 조정된다.
+                                fixed : viewport 기준(맨처음 부모 기준)
+                        
+                        - stack order(요소 쌓임 순서)
+                                -1. 요소에 position  속성값이 있는 경우 위에 쌓임
+                                -2. 위의 조건이 같을 경우, z-index의 값이 높을 수록 위에 쌓임
+                                -3. 위의 조건들이 모두 갍은 경우 작성된 순서가 마지막일수록 위에 쌓임
+                                -4. 
+
