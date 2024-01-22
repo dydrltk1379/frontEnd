@@ -109,14 +109,102 @@ CSS(cascading style sheet)
                         1. default : auto
                         2. 단위 : px. em, rem, vh, vw
                 - 최대 너비(max-width, max-height)
-                        1. 기본값 : none
+                        1. default : none
                         2. auto : x
                         3. 단위 : px. em, rem, vh, vw 
                 - 최소 너비(min-width, min-height)
-                        1. 기본값 : 0
+                        1. default : 0
                         2. auto : x
                         3. 단위 : px. em, rem, vh, vw 
                 - 단위
                         1. px : 해상도 1픽셀 
                         2. %
-                        3. em : 요소의 글꼴 크기
+                        3. em : 요소의 글꼴 크기 (자동, 16px)
+                        4. rem : 루트(html) 요소의 글꼴 크기 (고정, 16px)
+                        5. vw, vh : viewport의 가로(width), 세로(height) 너비의 백분율(상대적)
+
+                - margin       
+                        1. default : 0
+                        2. auto, 단위, %(x)
+                        3. 음수 지정 가능 -> 여백이 작아져 겹침
+                        4. 단축 속성
+                                margin : [top]  [right]  [bottom]  [left];
+                                        [top,bottom]  [left,right];
+                                        [top]  [left,right]  [bottom];
+                                        [top,right,bottom,left];
+                
+                        5.개별 속성
+                                margin-top, margin-bottom, margin-left, margin-right
+                
+                - 내부 여백(padding)       
+                        1. default : 0
+                        2. 단위, %(o)
+                        3. 요소의 크기가 커진다.
+                        4. 단축 속성
+                                padding :       [top]  [right]  [bottom]  [left];
+                                                [top,bottom]  [left,right];
+                                                [top]  [left,right]  [bottom];
+                                                [top,right,bottom,left];
+                
+                       5. 개별 속성
+                                padding-top, padding-bottom, padding-left, padding-right
+
+                - 테투리선과 색상 표현 
+                        1. border : 선-두께 선-종류 선-색상
+                        2. 요소의 크기가 커진다.
+                        3. 개별 속성 - 단축 속성 사용
+                                border-width:   [top]  [right]  [bottom]  [left];
+                                (border-style)  [top,bottom]  [left,right];
+                                (border-color)  [top]  [left,right]  [bottom];
+                                                [top,right,bottom,left];
+                                        ㄴ color : 색상 이름(브라우저에서 제공하는 이름)
+                                                16진수 : #000, #FFFFFF
+                                -------------------------------------------------------
+                                border-방향 : border-top, border-left...
+                                border-방향-속성 : border-top-width, border-bottom-style,...
+
+                - border-radius
+                        1. default : 0
+                        2. 단위: px, em, vw 등
+                        3. 요소의 크기가 커진다.
+                        4. 단축 속성
+
+                - 크기 계산(box-sizing)
+                        1. 요소의 크기 계산 기준을 지정
+                                - default : content-box(요소의 내용으로만 크기 계산)
+                                        *border-box(요소의 내용 + padding + border로 크기 계산)
+
+                - overflow
+                        1. 요소의 크기 이상으로 내용이 넘칠 때, 보여짐을 제어하는 단축 속성
+                        2. default : visible
+                        3. hidden : overflow을 잘라냄
+                        4. auto : overflow이 있을 때만 잘라내고 스크롤바 생성
+                        5. scroll(X)
+                        6. 개별 속성 
+                                overflow x축, y축 
+
+                - display
+                        1. default : block. inliine, inline-block       
+                        2. flex : 1차원 레이아웃
+                        3. grid : 2차원 레이아웃 
+                        4. none : 화면에서 안 보여짐
+
+                - opacity
+                        1. default : 1
+                        2. 0 ~ 1 사이의 소수점
+
+        (2) 글꼴
+                - font-style
+                - font-weight : 기본 두께 400(normal), 두껍게 700(bold)(100~900)
+                - font-size
+                - line-height : 숫자(배수)
+                - font-family : 글꼴1, 글꼴2, .... 글꼴계열
+                        -> 글꼴 계열 : serif(바탕체 계열), sans-serit(고딕체 계열), monospace(고정너비 글꼴),
+                                                cursive(필기체), fantasy(장식)
+
+        (3) 문자
+                - color
+                - text-align: left center right
+                - text_decoration(선 여부) : none, underline, line-through
+                - text-indent(들여쓰기: 양수값, 내어쓰기: 음수값)
+                - 
